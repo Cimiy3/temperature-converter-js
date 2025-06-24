@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pretvornik temperatur</title>
+</head>
+<body>
+  <h1>Pretvornik °C v °F</h1>
+
+  <input id="celsius" placeholder="Vnesi temperaturo v °C" />
+  <button id="pretvori">Pretvori</button>
+
+  <p id="rezultat"></p>
+
+  <script>
+    document.getElementById("pretvori").addEventListener("click", function () {
+      let celsius = parseFloat(document.getElementById("celsius").value);
+      if (isNaN(celsius)) {
+        document.getElementById("rezultat").innerText = "Prosim, vnesi veljavno številko.";
+        return;
+      }
+      let fahrenheit = (celsius * 9) / 5 + 32;
+      document.getElementById("rezultat").innerText = `${celsius} °C je ${fahrenheit.toFixed(2)} °F`;
+    });
+  </script>
+</body>
+</html>
